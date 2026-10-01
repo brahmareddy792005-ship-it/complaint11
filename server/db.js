@@ -74,9 +74,20 @@ async function seedInitialData() {
     }
 
     // 2. Seed Super Admin & Dept Admin Accounts
-    await Staff.deleteMany({ username: { $in: ['superadmin', 'admin', 'ksaiganesh64'] } });
+    await Staff.deleteMany({ username: { $in: ['superadmin', 'admin', 'ksaiganesh64', 'brahma'] } });
 
+    try {
     await Staff.insertMany([
+      {
+        id: 'admin-super-brahma',
+        username: 'brahma',
+        passwordHash: hashPassword('brahma07094595'),
+        name: 'Brahma (Super Admin)',
+        role: 'super_admin',
+        department: 'All Departments',
+        status: 'ACTIVE',
+        createdAt: new Date().toLocaleString('en-IN')
+      },
       {
         id: 'admin-super-01',
         username: 'ksaiganesh64',
@@ -128,6 +139,9 @@ async function seedInitialData() {
         createdAt: '2026-09-15 09:15 AM'
       }
     ]);
+    } catch (e) {
+      if (e.code !== 11000) console.warn('Warning during staff seeding:', e.message);
+    }
 
     // 3. Seed Demo Students
     const userCount = await User.countDocuments();

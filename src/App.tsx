@@ -14,7 +14,6 @@ import { PushNotificationBanner } from './components/PushNotificationBanner';
 import { SuperAdminDashboard } from './components/SuperAdminDashboard';
 import { DeptAdminDashboard } from './components/DeptAdminDashboard';
 import { StudentDashboard } from './components/StudentDashboard';
-import { Megaphone } from 'lucide-react';
 
 const AppContent: React.FC = () => {
   const { activeView, setActiveView, setIsLoginModalOpen, authUser } = useResolveHub();
@@ -70,16 +69,11 @@ const AppContent: React.FC = () => {
           
           {/* Col 1: Logo & Vision */}
           <div className="md:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-700 text-white flex items-center justify-center font-bold">
-                <Megaphone className="w-5 h-5 -rotate-12" />
-              </div>
-              <span className="text-2xl font-extrabold tracking-tight font-heading">
-                Resolve<span className="text-indigo-400">Hub</span>
-              </span>
+            <div className="flex items-center gap-3 bg-white p-2 rounded-xl w-fit">
+              <img src="/vignan-logo.png" alt="Vignan University" className="h-10 object-contain" />
             </div>
             <p className="text-xs text-slate-400 max-w-md leading-relaxed">
-              Complaint Management System — Super Admin, Department Admin & Student multi-role grievance resolution portal with real-time tracking.
+              Vignan University (IT) Complaint Management System — Super Admin, Department Admin & Student multi-role grievance resolution portal with real-time tracking.
             </p>
             <div className="text-[11px] text-emerald-400 font-mono flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -139,7 +133,7 @@ const AppContent: React.FC = () => {
         {/* Footer Bottom Bar */}
         <div className="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            © 2026 ResolveHub. Built with React, TypeScript & Tailwind CSS.
+            © 2026 Vignan University CMS. Built with React, TypeScript & Tailwind CSS.
           </div>
           <div className="flex items-center gap-4 text-slate-400 text-xs">
             <span>Privacy Policy</span>

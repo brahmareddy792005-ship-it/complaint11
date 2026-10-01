@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { 
-  Megaphone, 
   Bell, 
   User, 
   Menu, 
@@ -112,20 +111,19 @@ export const Navbar: React.FC = () => {
           {/* LEFT SIDE LOGO & TAGLINE */}
           <div 
             onClick={() => handleNavClick('home')}
-            className="flex items-center gap-2.5 cursor-pointer group py-1.5 select-none"
+            className="flex items-center gap-3 cursor-pointer group py-1 select-none"
           >
-            <div className="w-8.5 h-8.5 rounded-xl bg-gradient-to-br from-emerald-700 to-emerald-800 text-white flex items-center justify-center shadow-md shadow-emerald-900/10 group-hover:scale-105 transition-transform duration-200">
-              <Megaphone className="w-4 h-4 -rotate-12 group-hover:rotate-0 transition-transform duration-300" />
-            </div>
-
-            <div className="flex flex-col">
-              <div className="flex items-center">
-                <span className="text-lg sm:text-xl font-extrabold tracking-tight text-slate-900 font-heading">
-                  Resolve<span className="text-indigo-600">Hub</span>
-                </span>
-              </div>
-              <span className="text-[9px] sm:text-[10px] font-semibold text-slate-600 tracking-wider uppercase font-sans">
-                Complaint Management System
+            <img 
+              src="/vignan-logo.png" 
+              alt="Vignan University Logo" 
+              className="h-10 sm:h-12 object-contain group-hover:scale-105 transition-transform duration-200"
+            />
+            <div className="flex flex-col border-l-2 border-stone-200 pl-3">
+              <span className="text-sm sm:text-base font-extrabold tracking-tight text-slate-900 uppercase">
+                Vignan University
+              </span>
+              <span className="text-[9px] sm:text-[10px] font-bold text-emerald-700 tracking-wider uppercase">
+                Complaint Management
               </span>
             </div>
           </div>

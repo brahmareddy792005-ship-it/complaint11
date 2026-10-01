@@ -1,9 +1,9 @@
 // ── Base URL ──────────────────────────────────────────────────────────────
-const BASE = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+const BASE = import.meta.env.VITE_API_URL || '/api';
 // ── Generic fetch wrapper ─────────────────────────────────────────────────
 async function apiFetch<T>(path: string, options?: RequestInit): Promise<T> {
   const res = await fetch(`${BASE}${path}`, {
-    headers: { 'Content-Type': 'application/json', ...options?.headers },
+    headers: { 'Content-Type': 'application/json', 'Bypass-Tunnel-Reminder': 'true', ...options?.headers },
     ...options,
   });
   const json = await res.json();
